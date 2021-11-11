@@ -1,17 +1,8 @@
 import pygame
 
-from objects.pet import Pet
+from objects.game import Game
 
-pygame.init()
-
-display = pygame.display.set_mode([480, 640])
-pygame.display.set_caption("Vpet 0.0.0")
-
-player = Pet(0, 0, 64, 64)
-
-gameLoop = True
+game = Game(480, 640, "Vpet", "0.0.0")
 
 if __name__ == '__main__':
-
-    while gameLoop:
-        pygame.display.update()
+    game.update()
