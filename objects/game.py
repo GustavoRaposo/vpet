@@ -1,6 +1,6 @@
 import sys
 import pygame
-from libraries.animation import Animations
+from objects.pet import Pet
 
 
 class Game:
@@ -17,12 +17,8 @@ class Game:
         self.current_time = 0
         self.clock = pygame.time.Clock()
         self.running = True
-        self.group = pygame.sprite.Group()
-        self.animation = Animations("./assets/sprites/B_Morrigan",
-                                    self.screen_width / 2, self.screen_height / 2,
-                                    2,
-                                    "right")
-        self.group.add(self.animation)
+        self.pet = Pet(self.screen_width / 2, self.screen_height / 2,
+                       "./meta/B_Morrigan_meta.json")
 
     def event(self):
         for event in pygame.event.get():
@@ -30,30 +26,40 @@ class Game:
                 self.running = False
                 pygame.quit()
                 sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if self.pet.is_clicked():
+                    self.pet.state = "grabbed"
+            if event.type == pygame.MOUSEBUTTONUP:
+                if self.pet.state == "grabbed":
+                    self.pet.state = "idle"
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    self.running = False
+                    pygame.quit()
+                    sys.exit()
                 if event.key == pygame.K_SPACE:
-                    self.animation.direction = "left"
+                    self.pet.direction = 1
                 if event.key == pygame.K_LSHIFT:
-                    self.animation.direction = "right"
+                    self.pet.direction = -1
                 if event.key == pygame.K_q:
-                    self.animation.change_state("idle")
+                    self.pet.state = "idle"
                 if event.key == pygame.K_w:
-                    self.animation.change_state("walk")
+                    self.pet.state = "walk"
                 if event.key == pygame.K_e:
-                    self.animation.change_state("eat")
+                    self.pet.state = "eat"
                 if event.key == pygame.K_r:
-                    self.animation.change_state("grabbed")
+                    self.pet.state = "grabbed"
 
     def draw(self):
         self.screen.blit(self.background, (0, 0))
-        self.group.draw(self.screen)
+        self.pet.draw(self.screen)
         self.screen.blit(self.cursor, (pygame.mouse.get_pos()))
 
     def update(self):
         while self.running:
             self.event()
             self.draw()
-            self.group.update()
+            self.pet.update()
             pygame.display.update()
             pygame.display.flip()
             self.clock.tick(60)

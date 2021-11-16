@@ -2,34 +2,24 @@ import pygame
 
 
 class Animations(pygame.sprite.Sprite):
-    def __init__(self, path, x, y, scale, direction):
+    def __init__(self, paths, x, y):
         super().__init__()
-        self.idle = [pygame.image.load(f"{path}/idle_1.png"),
-                     pygame.image.load(f"{path}/idle_2.png"),
-                     pygame.image.load(f"{path}/idle_3.png"),
-                     pygame.image.load(f"{path}/idle_2.png"),
-                     pygame.image.load(f"{path}/idle_4.png"),
-                     pygame.image.load(f"{path}/idle_5.png"),
-                     pygame.image.load(f"{path}/idle_6.png"),
-                     pygame.image.load(f"{path}/idle_7.png")]
-        self.walk = [pygame.image.load(f"{path}/walk_1.png"),
-                     pygame.image.load(f"{path}/walk_2.png"),
-                     pygame.image.load(f"{path}/walk_3.png"),
-                     pygame.image.load(f"{path}/walk_2.png")]
-        self.grabbed = [pygame.image.load(f"{path}/grab_1.png"),
-                        pygame.image.load(f"{path}/grab_2.png"),
-                        pygame.image.load(f"{path}/grab_3.png")]
-        self.eat = [pygame.image.load(f"{path}/eat_1.png"),
-                    pygame.image.load(f"{path}/eat_2.png"),
-                    pygame.image.load(f"{path}/eat_3.png")]
+        self.idle = [pygame.image.load(path) for path in paths[0]]
+        self.walk = [pygame.image.load(path) for path in paths[1]]
+        self.grabbed = [pygame.image.load(path) for path in paths[2]]
+        self.eat = [pygame.image.load(path) for path in paths[3]]
         self.speed = 0.15
-        self.scale = scale
-        self.direction = direction
+        self.scale = 2
+        self.direction = "right"
         self.current_sate = self.idle
         self.current_frame = 0
         self.image = self.current_sate[self.current_frame]
+        self.x = x
+        self.y = y
         self.rect = self.image.get_rect()
-        self.rect.topleft = [x, y]
+        self.rect.topleft = [self.x, self.y]
+        self.width = self.image.get_width()
+        self.height = self.image.get_height()
 
     def update(self):
         self.current_frame += self.speed
@@ -37,12 +27,13 @@ class Animations(pygame.sprite.Sprite):
             self.current_frame = 0
         self.image = self.current_sate[int(self.current_frame)]
         self.image = pygame.transform.scale(self.image,
-                                            (self.image.get_width() * self.scale,
-                                             self.image.get_height() * self.scale))
+                                            (self.width * self.scale,
+                                             self.height * self.scale))
         if self.direction == "right":
             self.image = pygame.transform.flip(self.image, flip_x=True, flip_y=False)
         if self.direction == "left":
             self.image = pygame.transform.flip(self.image, flip_x=False, flip_y=False)
+        self.rect.center = [self.x, self.y]
 
     def change_state(self, state):
         if state == "idle":
