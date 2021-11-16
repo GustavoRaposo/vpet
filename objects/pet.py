@@ -5,18 +5,18 @@ from libraries.animation import Animations
 
 class Pet:
 
-    def __init__(self, x, y, metadata_path):
+    def __init__(self, x, y, pet_id):
         super().__init__()
         self.x = x
         self.y = y
-        with open(metadata_path) as f:
+        with open("./meta/pets_metadata.json") as f:
             self.meta_data = json.load(f)
-        self.animation = Animations(self.meta_data['sprites'], self.x, self.y)
-        self.base_health_points = self.meta_data['base_stats'][0]
-        self.base_attack = self.meta_data['base_stats'][1]
-        self.base_intelligence = self.meta_data['base_stats'][2]
-        self.base_defense = self.meta_data['base_stats'][3]
-        self.base_speed = self.meta_data['base_stats'][4]
+        self.animation = Animations(self.meta_data[pet_id]['sprites'], self.x, self.y)
+        self.base_health_points = self.meta_data[pet_id]['base_stats'][0]
+        self.base_attack = self.meta_data[pet_id]['base_stats'][1]
+        self.base_intelligence = self.meta_data[pet_id]['base_stats'][2]
+        self.base_defense = self.meta_data[pet_id]['base_stats'][3]
+        self.base_speed = self.meta_data[pet_id]['base_stats'][4]
         f.close()
         self.group = pygame.sprite.Group()
         self.group.add(self.animation)

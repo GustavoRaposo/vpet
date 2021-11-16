@@ -1,0 +1,116 @@
+{
+  "#000": {
+    "name": "",
+    "sprites": [
+      [
+        "./assets/sprites/B_Morrigan/idle_1.png",
+        "./assets/sprites/B_Morrigan/idle_2.png",
+        "./assets/sprites/B_Morrigan/idle_3.png",
+        "./assets/sprites/B_Morrigan/idle_2.png",
+        "./assets/sprites/B_Morrigan/idle_4.png",
+        "./assets/sprites/B_Morrigan/idle_5.png",
+        "./assets/sprites/B_Morrigan/idle_6.png",
+        "./assets/sprites/B_Morrigan/idle_7.png"
+      ],
+      [
+        "./assets/sprites/B_Morrigan/walk_1.png",
+        "./assets/sprites/B_Morrigan/walk_2.png",
+        "./assets/sprites/B_Morrigan/walk_3.png",
+        "./assets/sprites/B_Morrigan/walk_2.png"
+      ],
+      [
+        "./assets/sprites/B_Morrigan/grab_1.png",
+        "./assets/sprites/B_Morrigan/grab_2.png",
+        "./assets/sprites/B_Morrigan/grab_3.png"
+      ],
+      [
+        "./assets/sprites/B_Morrigan/eat_1.png",
+        "./assets/sprites/B_Morrigan/eat_2.png",
+        "./assets/sprites/B_Morrigan/eat_3.png"
+      ]
+    ],
+    "base_stats": [
+      400,
+      50,
+      50,
+      50,
+      50
+    ]
+  },
+  "#001": {
+    "name": "",
+    "sprites": [
+      [
+        "./assets/sprites/B_Morrigan/idle_1.png",
+        "./assets/sprites/B_Morrigan/idle_2.png",
+        "./assets/sprites/B_Morrigan/idle_3.png",
+        "./assets/sprites/B_Morrigan/idle_2.png",
+        "./assets/sprites/B_Morrigan/idle_4.png",
+        "./assets/sprites/B_Morrigan/idle_5.png",
+        "./assets/sprites/B_Morrigan/idle_6.png",
+        "./assets/sprites/B_Morrigan/idle_7.png"
+      ],
+      [
+        "./assets/sprites/B_Morrigan/walk_1.png",
+        "./assets/sprites/B_Morrigan/walk_2.png",
+        "./assets/sprites/B_Morrigan/walk_3.png",
+        "./assets/sprites/B_Morrigan/walk_2.png"
+      ],
+      [
+        "./assets/sprites/B_Morrigan/grab_1.png",
+        "./assets/sprites/B_Morrigan/grab_2.png",
+        "./assets/sprites/B_Morrigan/grab_3.png"
+      ],
+      [
+        "./assets/sprites/B_Morrigan/eat_1.png",
+        "./assets/sprites/B_Morrigan/eat_2.png",
+        "./assets/sprites/B_Morrigan/eat_3.png"
+      ]
+    ],
+    "base_stats": [
+      400,
+      50,
+      50,
+      50,
+      50
+    ]
+  },
+  "#002": {
+    "name": "",
+    "sprites": [
+      [
+        "./assets/sprites/B_Morrigan/idle_1.png",
+        "./assets/sprites/B_Morrigan/idle_2.png",
+        "./assets/sprites/B_Morrigan/idle_3.png",
+        "./assets/sprites/B_Morrigan/idle_2.png",
+        "./assets/sprites/B_Morrigan/idle_4.png",
+        "./assets/sprites/B_Morrigan/idle_5.png",
+        "./assets/sprites/B_Morrigan/idle_6.png",
+        "./assets/sprites/B_Morrigan/idle_7.png"
+      ],
+      [
+        "./assets/sprites/B_Morrigan/walk_1.png",
+        "./assets/sprites/B_Morrigan/walk_2.png",
+        "./assets/sprites/B_Morrigan/walk_3.png",
+        "./assets/sprites/B_Morrigan/walk_2.png"
+      ],
+      [
+        "./assets/sprites/B_Morrigan/grab_1.png",
+        "./assets/sprites/B_Morrigan/grab_2.png",
+        "./assets/sprites/B_Morrigan/grab_3.png"
+      ],
+      [
+        "./assets/sprites/B_Morrigan/eat_1.png",
+        "./assets/sprites/B_Morrigan/eat_2.png",
+        "./assets/sprites/B_Morrigan/eat_3.png"
+      ]
+    ],
+    "base_stats": [
+      400,
+      50,
+      50,
+      50,
+      50
+    ]
+  }
+}
